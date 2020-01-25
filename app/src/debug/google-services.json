@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:797890487467:android:2d4d93ec7fbde4867243ee",
         "android_client_info": {
-          "package_name": "com.person.project"
+          "package_name": "rw.rutaks.snypet"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "797890487467-ljn86kmbr1nrf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.person.project",
+            "package_name": "rw.rutaks.snypet",
             "certificate_hash": "0e31c3fdb43cace2fb8be2cea451afadc95bca38"
           }
         },
