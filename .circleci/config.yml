@@ -14,13 +14,6 @@ jobs:
       #      - run:
       #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
       #         command: sudo chmod +x ./gradlew
-      - test:
-          pre:
-            # Create mock Play Services JSON
-            - ./team-props/scripts/ci-mock-google-services-setup.sh
-
-          override:
-            - ./gradlew check --no-daemon --console=plain --continue
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
