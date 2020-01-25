@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    tools:context=".activities.LoginActivity">
+    android:layout_height="match_parent"
+    tools:context=".activities.RegisterActivity">
 
     <ProgressBar
-        android:id="@+id/progressBarLogin"
+        android:id="@+id/progress_bar_register"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_view_register"
         android:layout_width="340dp"
         android:layout_height="310dp"
         android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/edit_text_email_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,10 +46,25 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_register" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+    android:id="@+id/edit_text_password_register"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp"
+    android:backgroundTint="@color/colorAccent"
+    android:ems="10"
+    android:hint="@string/password_hint"
+    android:inputType="textPassword"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/edit_text_email_register" />
+
+    <EditText
+        android:id="@+id/edit_text_confirm_password_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -57,37 +72,38 @@
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
-        android:hint="@string/password_hint"
+        android:hint="@string/confirm_password_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password_register" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/button_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/colorPrimary"
-        android:text="@string/login_action"
+        android:text="@string/register_action"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_confirm_password_register" />
 
     <Button
-        android:id="@+id/buttonGoToRegister"
+        android:id="@+id/button_go_to_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/colorAccent"
-        android:text="@string/go_to_register_action"
+        android:text="@string/go_to_login_action"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/button_register" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

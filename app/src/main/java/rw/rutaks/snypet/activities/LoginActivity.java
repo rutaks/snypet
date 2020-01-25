@@ -1,9 +1,10 @@
-package rw.rutaks.snypet;
+package rw.rutaks.snypet.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rw.rutaks.snypet.R;
 import rw.rutaks.snypet.utils.Validations;
 
 import android.content.Intent;
@@ -21,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    //VIEW FIELDS DECLARATIONS
+    //VIEW ELEMENTS
     @BindView(R.id.editTextEmail) EditText editTextEmail;
     @BindView(R.id.editTextPassword) EditText editTextPassword;
     @BindView(R.id.buttonLogin)Button buttonLogin;
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonGoToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                goToRegister();
             }
         });
     }
@@ -79,29 +81,59 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method To Redirect User To Main View
+     */
     private void goToMain(){
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
+    /**
+     * Method To Redirect User To Registration View
+     */
+    private void goToRegister(){
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Method To Make Login Request To Firebase,
+     * will set proper animations and messages from request
+     * @param email user's email
+     * @param password user's password
+     */
     private void attemptLogin(String email, String password){
         if(Validations.isValidEmail(email) && Validations.isValidPassword(password)){
             progressBar.setVisibility(View.VISIBLE);
+            enableFields(false);
             auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressBar.setVisibility(View.INVISIBLE);
                     if(!task.isSuccessful()){
                         Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        enableFields(true);
                         return;
                     }
                     progressBar.setVisibility(View.INVISIBLE);
+                    enableFields(true);
                     goToMain();
                 }
             });
         } else {
             Toast.makeText(this, "Make Sure All Fields Are Valid", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * Method To Disable or Enable Buttons,
+     * To ensure valid requests
+     * @param state boolean representing disabling(false) or enabling(true) fields
+     */
+    private void enableFields(boolean state){
+        buttonLogin.setEnabled(state);
+        buttonGoToRegister.setEnabled(state);
     }
 }
