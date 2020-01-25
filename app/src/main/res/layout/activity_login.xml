@@ -24,7 +24,7 @@
         android:layout_width="340dp"
         android:layout_height="310dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="Main Logo Of The App"
         app:layout_constraintEnd_toEndOf="parent"
