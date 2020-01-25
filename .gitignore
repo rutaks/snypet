@@ -7,5 +7,5 @@ build
 captures
 .externalNativeBuild
 .cxx
-*.json
+app/google-services.json
 .idea
