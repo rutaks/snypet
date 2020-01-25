@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Snypet</string>
+    <string name="email_hint">Email&#8230;</string>
+    <string name="password_hint">Password&#8230;</string>
+    <string name="login_action">Login</string>
+    <string name="go_to_register_action">Don\'t Have An Account? Register</string>
 </resources>
