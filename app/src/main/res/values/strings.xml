@@ -2,6 +2,12 @@
     <string name="app_name">Snypet</string>
     <string name="email_hint">Email&#8230;</string>
     <string name="password_hint">Password&#8230;</string>
+    <string name="confirm_password_hint">Confirm Password&#8230;</string>
     <string name="login_action">Login</string>
     <string name="go_to_register_action">Don\'t Have An Account? Register</string>
+    <string name="action_search_text">Search</string>
+    <string name="action_account_settings_action">Account Settings</string>
+    <string name="action_logout_text">Logout</string>
+    <string name="register_action">Register</string>
+    <string name="go_to_login_action">Already Have An Account? Login</string>
 </resources>
